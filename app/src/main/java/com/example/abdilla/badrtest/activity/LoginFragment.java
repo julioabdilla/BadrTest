@@ -1,7 +1,10 @@
 package com.example.abdilla.badrtest.activity;
 
+import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.util.TypedValue;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -55,6 +58,11 @@ public class LoginFragment extends BaseFragment {
 
     @OnClick(R.id.login)
     void login() {
+        View view = activity.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
         activity.showLoadingDialog();
         activity.addSubscription(activity.application.getAuthApi().login(new Login(email.getText().toString(), password.getText().toString()))
                 .subscribeOn(Schedulers.newThread())

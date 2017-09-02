@@ -1,9 +1,12 @@
 package com.example.abdilla.badrtest.activity;
 
+import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.v4.util.ArrayMap;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -65,6 +68,11 @@ public class RegisterFragment extends BaseFragment {
 
     @OnClick(R.id.register)
     void register() {
+        View view = activity.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
         activity.showLoadingDialog();
         //try {
             //JSONObject paramObject = new JSONObject();

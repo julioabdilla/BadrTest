@@ -22,7 +22,7 @@ android {
     }
     productFlavors {
         staging {
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.4:3000/\""
+            buildConfigField "String", "BASE_URL", "\"http://dev.badr.co.id/\""
         }
 
         production {

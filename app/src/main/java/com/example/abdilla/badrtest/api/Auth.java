@@ -16,15 +16,15 @@ import rx.Observable;
 
 public interface Auth {
 
-    @Headers("Content-Type: application/json; charset=UTF-8")
+    @Headers("Content-Type: application/json")
     @POST("freedom/auth/register")
     Observable<Response<Void>> register(@Body Register body);
 
-    @Headers("Content-Type: application/json; charset=UTF-8")
+    @Headers("Content-Type: application/json")
     @POST("freedom/auth/login")
     Observable<Response<User>> login(@Body Login body);
 
-    @Headers("Content-Type: application/json; charset=UTF-8")
+    @Headers("Content-Type: application/json")
     @POST("freedom/auth/logout")
     Observable<Response<Void>> logout();
 
