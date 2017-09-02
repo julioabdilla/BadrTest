@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="18dp">
+
+    <include layout="@layout/partial_social_auth" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/grayTxt2"
+        android:textSize="14sp"
+        android:text="@string/txt_auth_or"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:padding="4dp"
+        android:background="@drawable/inp_state"
+        android:drawableStart="@drawable/ic_email_outline_grey600_18dp"
+        android:drawablePadding="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColorHint="@color/grayTxt5"
+        android:textColor="@color/grayTxt2"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/plc_auth_email"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:padding="4dp"
+        android:background="@drawable/inp_state"
+        android:drawableStart="@drawable/ic_lock_outline_grey600_18dp"
+        android:drawablePadding="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColorHint="@color/grayTxt5"
+        android:textColor="@color/grayTxt2"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:hint="@string/plc_auth_password" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_main"
+        android:textColor="@color/mdtp_white"
+        android:textSize="16sp"
+        android:text="@string/btn_auth_login"/>
+
+</LinearLayout>

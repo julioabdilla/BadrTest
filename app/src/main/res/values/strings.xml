@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BadrTest</string>
+
+    <string name="txt_loading">Loading</string>
+    <string name="txt_ok">Ok</string>
+    <string name="txt_cancel">Cancel</string>
+
+    <string name="title_auth">BADR</string>
+
+    <!-- Auth -->
+    <string name="title_auth_login">Sign In</string>
+    <string name="title_auth_register">Register</string>
+    <string name="btn_auth_google">SIGN IN WITH GOOGLE</string>
+    <string name="btn_auth_fb">SIGN IN WITH FACEBOOK</string>
+    <string name="txt_auth_or">atau</string>
+    <string name="plc_auth_name">Full Name</string>
+    <string name="plc_auth_email">Email</string>
+    <string name="plc_auth_password">Password</string>
+    <string name="plc_auth_conf">Password Confirm</string>
+    <string name="text_auth_forgot">Forgot password?</string>
+    <string name="btn_auth_login">Sign In</string>
+    <string name="btn_auth_register">Register</string>
+    <string name="txt_auth_terms">By signing up, you are agree to our terms and privacy policy</string>
+    <string name="notif_auth_register_success">Register success</string>
+    <string name="notif_auth_register_failed">Register failed</string>
+</resources>

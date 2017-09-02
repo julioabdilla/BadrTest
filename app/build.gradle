@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.abdilla.badrtest"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        staging {
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.4:3000/\""
+        }
+
+        production {
+            buildConfigField "String", "BASE_URL", "\"http://dev.badr.co.id/\""
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+
+    //GSON
+    compile 'com.google.code.gson:gson:2.7'
+
+    //RXANDROID
+    compile 'io.reactivex:rxandroid:1.1.0'
+
+    //BUTTERKINFE
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    //DAGGER
+    provided 'com.squareup.dagger:dagger-compiler:1.2.2'
+    compile 'com.squareup.dagger:dagger:1.2.5'
+
+    //RETROFIT
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+
+    //OKHTTP
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+
+    //OTTO
+    compile 'com.squareup:otto:1.3.8'
+
+    //PICASSO
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    //JODA TIME
+    compile 'joda-time:joda-time:2.9.4'
+
+    //TEXT FONT
+    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //MATERIAL DESIGN UI
+    compile 'com.wdullaer:materialdatetimepicker:2.3.0'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'com.hanks.animatecheckbox:library:0.1'
+
+    //PERMISSION DISPATCHER
+    compile 'com.github.hotchemi:permissionsdispatcher:2.1.3'
+    apt 'com.github.hotchemi:permissionsdispatcher-processor:2.1.3'
+
+    //VOLLEY
+    compile 'com.android.volley:volley:1.0.0'
+
+    testCompile 'junit:junit:4.12'
+}

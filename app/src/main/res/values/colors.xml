@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="subText">#B4FFFFFF</color>
+
+    <color name="activity_background">#fafafa</color>
+    <color name="white_transparent">#91ffffff</color>
+    <color name="black_transparent">#33000000</color>
+    <color name="full_transparent">#00ffffff</color>
+
+    <color name="button1">#1e7e26</color>
+
+    <color name="grayTxt">#39383c</color>
+    <color name="grayTxt2">#696969</color>
+    <color name="grayTxt3">#3e3e3f</color>
+    <color name="grayTxt4">#d3d3d3</color>
+    <color name="grayTxt5">#9f9f9f</color>
+    <color name="grayTxt6">#f3f3f3</color>
+    <color name="grayTxt7">#e3e3e3</color>
+
+    <color name="dark_green">#FF79C19F</color>
+    <color name="light_green">#97ed96</color>
+    <color name="dark_red">#fa7982</color>
+    <color name="light_red">#ffb8c0</color>
+    <color name="yellow">#fffea5</color>
+    <color name="dark_blue">#8082f5</color>
+    <color name="light_blue">#93e8ec</color>
+    <color name="purple">#d957ed</color>
+    <color name="grey">#979797</color>
+
+    <color name="red_plus">#dd4b39</color>
+    <color name="blue_fb">#3b5998</color>
+</resources>
