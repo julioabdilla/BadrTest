@@ -18,13 +18,17 @@ public interface Auth {
 
     @Headers("Content-Type: application/json; charset=UTF-8")
     @POST("freedom/auth/register")
-    Observable<Response<Void>> register(@Body Register data);
+    Observable<Response<Void>> register(@Body Register body);
 
     @Headers("Content-Type: application/json; charset=UTF-8")
     @POST("freedom/auth/login")
-    Observable<Response<User>> login(@Body Login data);
+    Observable<Response<User>> login(@Body Login body);
+
+    @Headers("Content-Type: application/json; charset=UTF-8")
+    @POST("freedom/auth/logout")
+    Observable<Response<Void>> logout();
 
     @Headers("Content-Type: application/json; charset=UTF-8")
     @POST("test")
-    Observable<Response<Void>> test(@Body Login data);
+    Observable<Response<Void>> test(@Body Login body);
 }

@@ -55,7 +55,7 @@ public class LoginFragment extends BaseFragment {
 
     @OnClick(R.id.login)
     void login() {
-        /*activity.showLoadingDialog();
+        activity.showLoadingDialog();
         activity.addSubscription(activity.application.getAuthApi().login(new Login(email.getText().toString(), password.getText().toString()))
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -68,18 +68,18 @@ public class LoginFragment extends BaseFragment {
                     @Override
                     public void onError(Throwable e) {
                         activity.dismissLoadingDialog();
-                        activity.showSnackBar(R.string.notif_auth_register_failed);
+                        activity.showSnackBar(R.string.notif_auth_login_failed);
                     }
 
                     @Override
                     public void onNext(Response<User> voidResponse) {
-                        //clearField();
                         activity.dismissLoadingDialog();
-                        activity.showSnackBar(R.string.notif_auth_register_success);
+                        activity.startActivity(activity, HomeActivity.class);
+                        activity.finish();
                     }
                 })
-        );*/
-        test();
+        );
+        //test();
     }
 
     void test(){

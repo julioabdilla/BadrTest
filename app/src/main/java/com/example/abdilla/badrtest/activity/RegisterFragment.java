@@ -2,8 +2,10 @@ package com.example.abdilla.badrtest.activity;
 
 import android.support.annotation.LayoutRes;
 import android.support.v4.util.ArrayMap;
+import android.text.Html;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.example.abdilla.badrtest.R;

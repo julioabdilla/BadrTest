@@ -61,4 +61,8 @@ public class App extends Application {
         return authApi;
     }
 
+    public boolean isLoggedIn(){
+        return SessionManager.isLoggedIn(this);
+    }
+
 }

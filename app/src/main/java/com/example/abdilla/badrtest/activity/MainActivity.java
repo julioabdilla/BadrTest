@@ -1,7 +1,5 @@
 package com.example.abdilla.badrtest.activity;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -24,19 +22,15 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.pager)
     ViewPager pager;
 
-    public static void startActivity(Context context){
-        Intent i = new Intent(context, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
-    }
-
     protected @LayoutRes
     int setView(){
         return R.layout.activity_main;
     }
 
     protected void begin(){
-        Log.i("Url", BuildConfig.BASE_URL);
+        Log.d("Url", BuildConfig.BASE_URL);
+
+        if(application.isLoggedIn()) startActivity(this, HomeActivity.class);
         Page loginPage = new Page();
         loginPage.title = getString(R.string.title_auth_login);
         loginPage.fragment = LoginFragment.newInstance();

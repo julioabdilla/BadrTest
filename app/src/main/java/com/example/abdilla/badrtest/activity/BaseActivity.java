@@ -2,7 +2,9 @@ package com.example.abdilla.badrtest.activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
@@ -37,6 +39,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     private ObjectGraph activityGraph;
     private CompositeSubscription mSubscriptions = new CompositeSubscription();
     private ProgressDialog loading;
+
+    protected void startActivity(Context context, Class activity){
+        Intent i = new Intent(context, activity);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -23,4 +23,11 @@
     <string name="txt_auth_terms">By signing up, you are agree to our terms and privacy policy</string>
     <string name="notif_auth_register_success">Register success</string>
     <string name="notif_auth_register_failed">Register failed</string>
+    <string name="notif_auth_login_success">Login success</string>
+    <string name="notif_auth_login_failed">Login failed</string>
+
+    <!-- Home -->
+    <string name="btn_home_logout">Logout</string>
+    <string name="notif_home_logout_success">Logout success</string>
+    <string name="notif_home_logout_failed">Logout failed</string>
 </resources>
