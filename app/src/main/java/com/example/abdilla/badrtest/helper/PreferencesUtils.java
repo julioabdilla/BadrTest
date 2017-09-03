@@ -137,5 +137,11 @@ public class PreferencesUtils {
     public static ArrayList<String> getStringList(Context context, String key){
         return new ArrayList<>(getStringSet(context, key));
     }
+
+    public static void clear(Context context, String key){
+        SharedPreferences.Editor sharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE).edit();
+        sharedPreferences.remove(key);
+        sharedPreferences.apply();
+    }
 }
 

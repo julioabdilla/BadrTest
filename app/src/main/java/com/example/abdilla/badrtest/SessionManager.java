@@ -30,4 +30,9 @@ public class SessionManager {
     public static boolean isLoggedIn(Context context){
         return getAccessToken(context)!=null&&getUser(context)!=null;
     }
+
+    public static void clearSession(Context context){
+        PreferencesUtils.clear(context, Keys.SESSION_ACCESS_TOKEN);
+        PreferencesUtils.clear(context, Keys.SESSION_USER);
+    }
 }

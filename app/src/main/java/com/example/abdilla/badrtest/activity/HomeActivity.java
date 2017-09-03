@@ -3,6 +3,7 @@ package com.example.abdilla.badrtest.activity;
 import android.support.annotation.LayoutRes;
 
 import com.example.abdilla.badrtest.R;
+import com.example.abdilla.badrtest.SessionManager;
 import com.example.abdilla.badrtest.helper.Response;
 
 import butterknife.OnClick;
@@ -43,6 +44,7 @@ public class HomeActivity extends BaseActivity {
 
                     @Override
                     public void onNext(Response<Void> voidResponse) {
+                        SessionManager.clearSession(HomeActivity.this);
                         dismissLoadingDialog();
                         startActivity(HomeActivity.this, MainActivity.class);
                         finish();
