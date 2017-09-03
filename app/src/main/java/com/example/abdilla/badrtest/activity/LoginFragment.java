@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.abdilla.badrtest.R;
+import com.example.abdilla.badrtest.SessionManager;
 import com.example.abdilla.badrtest.api.body.Login;
 import com.example.abdilla.badrtest.api.body.Register;
 import com.example.abdilla.badrtest.api.body.User;
@@ -81,6 +82,10 @@ public class LoginFragment extends BaseFragment {
 
                     @Override
                     public void onNext(Response<User> voidResponse) {
+                        com.example.abdilla.badrtest.model.User user = voidResponse.getResult();
+                        String token = voidResponse.getResult().getAccess_token();
+                        SessionManager.setAccessToken(activity, token);
+                        SessionManager.setUser(activity, user);
                         activity.dismissLoadingDialog();
                         activity.startActivity(activity, HomeActivity.class);
                         activity.finish();

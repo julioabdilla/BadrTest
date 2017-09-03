@@ -19,7 +19,6 @@ import com.squareup.otto.Bus;
 
 import java.io.IOException;
 import java.lang.reflect.Modifier;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Provider;
 
@@ -62,8 +61,8 @@ public class ApiModule {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request request = chain.request()
-                                .newBuilder()
-                                .build();
+                                /*.newBuilder()
+                                .build()*/;
                         if (SessionManager.getAccessToken(context) != null) {
                             request = request.newBuilder()
                                     .addHeader("Authorization", SessionManager.getAccessToken(context))
