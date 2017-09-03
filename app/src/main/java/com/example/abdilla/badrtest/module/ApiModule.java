@@ -56,13 +56,15 @@ public class ApiModule {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         //logging.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE);
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request request = chain.request()
-                                /*.newBuilder()
-                                .build()*/;
+                                .newBuilder()
+                                .addHeader("Host", BuildConfig.BASE_URL)
+                                .build();
                         if (SessionManager.getAccessToken(context) != null) {
                             request = request.newBuilder()
                                     .addHeader("Authorization", SessionManager.getAccessToken(context))
@@ -77,7 +79,7 @@ public class ApiModule {
 
         return new Retrofit.Builder()
                 .addConverterFactory(ScalarsConverterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create(new RxErrorHandlingCallAdapterFactory.ErrorListener() {
                     @Override
